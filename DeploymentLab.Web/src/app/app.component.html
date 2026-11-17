@@ -1,0 +1,42 @@
+
+<main style="max-width: 900px; margin: 40px auto;
+             font-family: Arial, sans-serif;">
+
+  <h1>DeploymentLab - Product Management</h1>
+
+  <p>Angular 17 + .NET 10 + PostgreSQL</p>
+
+  <button (click)="loadProducts()">
+    Refresh Products
+  </button>
+
+  <p *ngIf="loading">Loading products...</p>
+
+  <p *ngIf="errorMessage" style="color: red;">
+    {{ errorMessage }}
+  </p>
+
+  <table *ngIf="!loading && !errorMessage"
+         border="1" cellpadding="12"
+         style="width: 100%; border-collapse: collapse;
+                margin-top: 20px;">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Price (VND)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | number:'1.0-0' }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</main>

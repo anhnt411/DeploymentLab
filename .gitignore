@@ -1,0 +1,25 @@
+# .NET
+**/bin/
+**/obj/
+.vs/
+
+# Angular
+**/node_modules/
+**/dist/
+**/.angular/
+**/coverage/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+**/appsettings.Development.json
+**/appsettings.*.local.json
+
+# Database backups
+*.dump
+*.bak
+*.backup
+
+# Operating System
+.DS_Store
